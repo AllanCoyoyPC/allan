@@ -1,0 +1,12 @@
+{% extends 'tienda/base.html' %}
+
+{% block content %}
+    {% for post in tiendas %}
+        <div class="post">
+            <div class="date">
+                {{ post.direccion }}
+            </div>
+            <h1><a href="{% url 'tiendas.views.tienda_detalle' pk=post.pk %}">{{ post.nombre }}</a></h1>
+        </div>
+    {% endfor %}
+{% endblock content %}

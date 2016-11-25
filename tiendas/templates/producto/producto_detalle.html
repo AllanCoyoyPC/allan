@@ -1,0 +1,13 @@
+{% extends 'producto/base.html' %}
+
+   {% block content %}
+       <div class="post">
+           {% if productos.nombre %}
+           {% endif %}
+           <a class="btn btn-default" href="{% url 'producto_eliminar' pk=productos.pk %}"><span class="glyphicon glyphicon-remove"> Eliminar</span></a>
+           <a class="btn btn-default" href="{% url 'producto_editar' pk=productos.pk %}"><span class="glyphicon glyphicon-pencil"> Editar</span></a>
+           <h4>Producto: {{ productos.nombre }}</h4>
+           <img src="http://127.0.0.1:8000/media/{{productos.foto}}" alt="{{ productos.foto }}"/>
+           <h4>Precio: {{ productos.precio|linebreaksbr }}</h4>
+       </div>
+   {% endblock %}

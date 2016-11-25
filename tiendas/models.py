@@ -15,7 +15,7 @@ class Tienda(models.Model):
     nombre = models.CharField(max_length=60)
     direccion = models.CharField(max_length=60)
     telefono = models.CharField(max_length=15)
-    foto = models.ImageField(upload_to='tiendas/imagen/',blank=True, null=True)
+    foto = models.ImageField(upload_to='tiendas/media/',blank=True, null=True)
     productos = models.ManyToManyField(Producto, through='Inventario')
     def __str__(self):
         return self.nombre

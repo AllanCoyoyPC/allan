@@ -1,0 +1,12 @@
+{% extends 'producto/base.html' %}
+
+{% block content %}
+    {% for post in productos %}
+        <div class="post">
+            <div class="date">
+                {{ post.precio }}
+            </div>
+            <h1><a href="{% url 'tiendas.views.producto_detalle' pk=post.pk %}">{{ post.nombre }}</a></h1>
+        </div>
+    {% endfor %}
+{% endblock content %}

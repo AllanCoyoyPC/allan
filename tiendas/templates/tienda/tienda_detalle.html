@@ -1,0 +1,14 @@
+{% extends 'tienda/base.html' %}
+
+   {% block content %}
+       <div class="post">
+           {% if tiendas.nombre %}
+           {% endif %}
+           <a class="btn btn-default" href="{% url 'tienda_eliminar' pk=tiendas.pk %}"><span class="glyphicon glyphicon-remove"> Eliminar</span></a>
+           <a class="btn btn-default" href="{% url 'tienda_editar' pk=tiendas.pk %}"><span class="glyphicon glyphicon-pencil"> Editar</span></a>
+           <h4>Tienda:: {{ tiendas.nombre }}</h4>
+           <h4>Direccion: {{ tiendas.direccion }}</h4>
+           <img src="http://127.0.0.1:8000/media/{{tiendas.foto}}" alt="{{ tiendas.foto }}"/>
+           <h4>Telefono: {{ tiendas.telefono|linebreaksbr }}</h4>
+       </div>
+   {% endblock %}
